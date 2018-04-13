@@ -22,7 +22,7 @@ CREATE TABLE people (
  * Create another table that references the 'people' table
  * using a foreign key relationship.
  */
-CREATE TABLE orders(
+CREATE TABLE orders (
 	id INTEGER AUTO_INCREMENT,
     amount DECIMAL(18,2) NOT NULL,
     person_id INT,
@@ -35,4 +35,4 @@ CREATE TABLE orders(
  * Create an index for the 'people' table
  * using te first_name field
  */
-CREATE INDEX first name index ON people (first_name);
+CREATE INDEX first_name_index ON people (first_name);
