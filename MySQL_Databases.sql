@@ -36,3 +36,21 @@ CREATE TABLE orders (
  * using te first_name field
  */
 CREATE INDEX first_name_index ON people (first_name);
+
+/**
+ * Insert a new record into the 'people' table
+ */
+INSERT INTO my_db.people (
+	first_name,
+    second_name,
+    DOB
+) VALUES (
+	'John',
+    'Lennon',
+    STR_TO_DATE('1/01/2012', '%d/%m/%Y')
+);
+
+/**
+ * Select a;; rows from the 'people' table
+ */
+SELECT * FROM my_db.people;
