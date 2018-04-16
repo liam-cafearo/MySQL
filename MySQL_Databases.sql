@@ -77,3 +77,22 @@ INSERT INTO my_db.orders (
     (9.02, 1)
     (13.02, 1),
     (15.02, 1);
+
+/**
+ * Create a new table called 'profiles'
+ */
+CREATE TABLE profiles (
+	id INTEGER AUTO_INCREMENT,
+    person_id INT,
+    address text,
+    update_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (person_id) REFERENCES people(id)
+);
+
+/**
+ * Update the address of a person in the 'profiles'
+ */
+UPDATE `my_db`.`profiles`
+SET `address` = "la New Address"
+WHERE `person_id` = 2;
