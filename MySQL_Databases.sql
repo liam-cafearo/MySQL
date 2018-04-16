@@ -54,3 +54,26 @@ INSERT INTO my_db.people (
  * Select a;; rows from the 'people' table
  */
 SELECT * FROM my_db.people;
+
+/**
+ * Insert a new record into the 'orders' table
+ */
+INSERT INTO my_db.orders (
+	amount,
+    person_id
+) VALUES (
+	12.02
+    1
+);
+
+/**
+ * Insert a multiple records into the 'orders' table
+ */
+INSERT INTO my_db.orders (
+	amount,
+    person_id
+) VALUES
+	(12.02, 1),
+    (9.02, 1)
+    (13.02, 1),
+    (15.02, 1);
