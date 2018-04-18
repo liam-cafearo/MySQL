@@ -96,3 +96,10 @@ CREATE TABLE profiles (
 UPDATE `my_db`.`profiles`
 SET `address` = "la New Address"
 WHERE `person_id` = 2;
+
+/**
+ * Yoni advised that it can be just the following
+ * as USE my_bd; is used beforehand
+ */
+UPDATE profiles SET id=3 WHERE person_id=2;
+ 
