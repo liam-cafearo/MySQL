@@ -1,4 +1,10 @@
 /**
+ * Create database
+ */
+create database my_db;
+
+
+/**
  * Tell MySQL which Database we wish to use
  */
 USE my_db;
@@ -102,4 +108,35 @@ WHERE `person_id` = 2;
  * as USE my_bd; is used beforehand
  */
 UPDATE profiles SET id=3 WHERE person_id=2;
+
+/**
+ * How to delete rows format
+ */
+DELETE FROM database_name.my_table_name
+WHERE <where_expression>; 
+
+/** 
+ * WHERE statement specifies the rows to delete
+ * otherwise it will delete all rows
+ */
  
+/**
+ * EXAMPLE
+ */
+DELETE FROM my_db.people
+WHERE id = 3;
+
+/**
+ * Delete a user from out 'people' table
+ * the below is called a 'cascaded' delete
+ * this is used when a FOREIGN KEY constaint is present
+ */
+
+DELETE FROM my_db.profiles
+WHERE person_id = 3;
+
+DELETE FROM my_db.orders
+WHERE person_id = 3;
+
+DELETE FROM my_db.people
+WHERE id = 3;
