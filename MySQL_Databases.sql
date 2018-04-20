@@ -57,7 +57,7 @@ INSERT INTO my_db.people (
 );
 
 /**
- * Select a;; rows from the 'people' table
+ * Select all rows from the 'people' table
  */
 SELECT * FROM my_db.people;
 
