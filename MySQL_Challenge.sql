@@ -1,8 +1,8 @@
 -- create database
-create database challenge_sql;
+create database challenge_db;
 
 -- tell mySQL which database we wish to use
-USE challenge_sql;
+USE challenge_db;
 
 -- create a people table
 create table people (
@@ -28,7 +28,7 @@ create table profiles (
     id INTEGER AUTO_INCREMENT,
     person_id INT,
     address text,
-    update at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    update_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (person_id) REFERENCES people(id)
 );
@@ -37,7 +37,7 @@ create table profiles (
 CREATE INDEX first_name_index ON people (first_name);
 
 -- Insert a new person
-INSERT INTO challenge_sql.people (
+INSERT INTO challenge_db.people (
     first_name,
     second_name,
     DOB
@@ -48,7 +48,7 @@ INSERT INTO challenge_sql.people (
 );
 
 -- add our person to the profiles table
-INSERT INTO challenge_sql.profiles (
+INSERT INTO challenge_db.profiles (
     'person_id',
     'address'
 ) VALUES (
@@ -57,7 +57,7 @@ INSERT INTO challenge_sql.profiles (
 );
 
 -- insert multiple records in one command to the 'orders' table
-INSERT INTO challenge_sql.orders (
+INSERT INTO challenge_db.orders (
     amount,
     person_id
 ) VALUES
