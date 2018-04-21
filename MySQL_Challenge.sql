@@ -49,10 +49,10 @@ INSERT INTO challenge_db.people (
 
 -- add our person to the profiles table
 INSERT INTO challenge_db.profiles (
-    'person_id',
-    'address'
+	person_id,
+    address
 ) VALUES (
-    1,
+	1,
     "Central City"
 );
 
@@ -63,5 +63,17 @@ INSERT INTO challenge_db.orders (
 ) VALUES
     (12.02, 1),
     (9.02, 1),
+    (8.00, 1),
     (13.02, 1),
     (15.02, 1);
+    
+-- challenge B (copied the answer as I had forgotten the previous lesson!)
+-- Since the third order is 8 pounds we know that 8 x 2 = 16 so we can set the ammount to 16
+
+-- UPDATE challenge_db.orders SET amount = 16 WHERE id=3;
+
+-- however we may not always know what the value of that field is, so in that case we need to use the multiplication operator *
+-- so in our case we will need to set 'amount = amount*2'
+
+UPDATE challenge_db.orders SET amount = amount * 2 WHERE id=3;
+ 
