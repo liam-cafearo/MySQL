@@ -114,3 +114,22 @@ ORDER BY person_id DESC;
  */
 SELECT person_id, COUNT(amount)
 FROM my_db.orders GROUP BY person_id;
+
+/**
+ * Select query using joins
+ */
+SELECT * FROM `my_db`.`people`
+JOIN `my_db`.`profiles`
+ON
+people.id = profiles.person_id;
+
+/**
+ * A more complex select query using CONCAT, SUM, AS and GROUP BY
+ */
+SELECT CONCAT(people.first_name, ' ', people.second_name)
+AS fullname,
+SUM(orders.amount) AS total_spend
+FROM `my_db`.`people`
+JOIN `my_db`.`orders`
+ON people.id = orders.person_id
+GROUP BY people.id;
