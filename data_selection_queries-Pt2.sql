@@ -47,3 +47,27 @@ BETWEEN
 '2015-09-08 14:48:00'
 AND
 '2016-09-08 15:34:00';
+
+/**
+ * Using AND multiple times in your select query
+ */
+SELECT * FROM my_db.orders
+WHERE created_at
+BETWEEN
+'2015-09-08 14:48:00'
+AND
+'2016-09-08 15:34:00'
+AND
+amount > 12.00;
+
+/**
+ * Using the NOT keyword
+ */
+SELECT * FROM my_db.orders
+WHERE created_at
+BETWEEN
+'2015-09-08 14:48:00'
+AND
+'2016-09-08 15:34:00'
+AND NOT
+amount > 12.00;

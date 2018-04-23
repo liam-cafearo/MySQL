@@ -2,6 +2,8 @@
  * create a few more orders for each person
  * copied the values from the challenge answer 
  * for ease, plus needed a reminder for adding values
+ * the person_id is not 2 and 3 as my database doesn't
+ * hold those values.
  */
 INSERT INTO `my_db`.`orders` (
 	`person_id`,
