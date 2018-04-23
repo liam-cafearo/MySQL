@@ -71,3 +71,46 @@ AND
 '2016-09-08 15:34:00'
 AND NOT
 amount > 12.00;
+
+/**
+ * Create a select query that uses the NOT keyword
+ * with the BETWEEN keyword
+ */
+SELECT * FROM my_db.orders
+WHERE amount
+NOT BETWEEN
+13
+AND
+16;
+
+/**
+ * Ordering selected data
+ */
+SELECT * FROM my_db.orders
+WHERE created_at
+BETWEEN
+'2015-09-08 14:48:00'
+AND
+'2016-09-08 15:34:00'
+AND
+amount > 12.00
+ORDER BY person_id;
+
+/**
+ * Descending order by using the DESC keyword
+ */
+SELECT * FROM my_db.orders
+WHERE created_at
+BETWEEN
+'2015-09-08 14:48:00'
+AND
+'2016-09-08 15:34:00'
+AND
+amount > 12.00
+ORDER BY person_id DESC;
+
+/**
+ * Create a select query using GROUP BY keyword
+ */
+SELECT person_id, COUNT(amount)
+FROM my_db.orders GROUP BY person_id;
