@@ -133,3 +133,21 @@ FROM `my_db`.`people`
 JOIN `my_db`.`orders`
 ON people.id = orders.person_id
 GROUP BY people.id;
+
+/**
+ * Example of a select query using LEFT JOIN
+ */
+SELECT people.first_name, orders.id
+FROM my_db.people
+LEFT JOIN my_db.orders
+ON people.id = orders.person_id
+ORDER BY people.first_name;
+
+/**
+ * Example of select query using RIGHT JOIN
+ */
+SELECT orders.id, people.first_name
+FROM my_db.orders
+RIGHT JOIN my_db.people
+ON orders.person_id = people.id
+ORDER BY orders.person_id;
